@@ -6,7 +6,179 @@
 
     <title>Tokopedia Store</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Pencarian dan Keranjang */
+.fitur{
+    width:90%;
+    margin:20px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.fitur input{
+    width:300px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.fitur h3{
+    color:#03ac0e;
+}
+
+/* Form Login, Register, Checkout */
+.form-section{
+    width:90%;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-section h2{
+    margin-bottom:15px;
+    color:#03ac0e;
+}
+
+.form-section input{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.form-section button{
+    background:#03ac0e;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.form-section button:hover{
+    background:#028a0b;
+}
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+        }
+
+        /* Header */
+        header{
+            background:#03ac0e;
+            color:white;
+            padding:15px;
+            text-align:center;
+        }
+
+        nav{
+            background:white;
+            padding:15px;
+            text-align:center;
+            box-shadow:0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav a{
+            text-decoration:none;
+            color:#333;
+            margin:0 15px;
+            font-weight:bold;
+        }
+
+        /* Banner */
+        .banner{
+            background:#03ac0e;
+            color:white;
+            text-align:center;
+            padding:50px 20px;
+        }
+
+        .banner h2{
+            margin-bottom:10px;
+        }
+
+        /* Produk */
+        .container{
+            width:90%;
+            margin:auto;
+            padding:30px 0;
+        }
+
+        .produk{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+        }
+
+        .card-body{
+            padding:15px;
+        }
+
+        .card-body h3{
+            font-size:18px;
+            margin-bottom:10px;
+        }
+
+        .harga{
+            color:#03ac0e;
+            font-size:20px;
+            font-weight:bold;
+            margin-bottom:10px;
+        }
+
+        .btn{
+            display:block;
+            width:100%;
+            padding:10px;
+            background:#03ac0e;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            background:#028a0b;
+        }
+
+        footer{
+            background:#333;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,20 +201,20 @@
     </section>
 
     <!-- Pencarian dan Keranjang -->
-    <div class="fitur">
+<div class="fitur">
 
-        <input
-            type="text"
-            id="search"
-            placeholder="Cari produk..."
-            onkeyup="cariProduk()">
+    <input
+        type="text"
+        id="search"
+        placeholder="Cari produk..."
+        onkeyup="cariProduk()">
 
-        <h3>
-            🛒 Keranjang:
-            <span id="cart">0</span>
-        </h3>
+    <h3>
+        🛒 Keranjang:
+        <span id="cart">0</span>
+    </h3>
 
-    </div>
+</div>
 
     <div class="container">
 
@@ -52,111 +224,137 @@
 
             <!-- Headset -->
             <div class="card">
-                <img src="images/headset.JPG" alt="Headset Gaming">
+                <img src="headset.JPG" alt="Headset Gaming">
                 <div class="card-body">
                     <h3>Headset Gaming RGB</h3>
                     <p class="harga">Rp250.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
-                        Beli Sekarang
-                    </button>
+                    <button class="btn" onclick="tambahKeranjang()">Beli Sekarang</button>
                 </div>
             </div>
 
             <!-- Keyboard -->
             <div class="card">
-                <img src="images/keyboard.JPG" alt="Keyboard Mechanical">
+                <img src="keyboard.JPG" alt="Keyboard Mechanical">
                 <div class="card-body">
                     <h3>Keyboard Mechanical</h3>
                     <p class="harga">Rp450.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
-                        Beli Sekarang
-                    </button>
+                    <button class="btn" onclick="tambahKeranjang()">Beli Sekarang</button>
                 </div>
             </div>
 
             <!-- Mouse -->
             <div class="card">
-                <img src="images/mouse.JPG" alt="Mouse Wireless">
+                <img src="mouse.JPG" alt="Mouse Wireless">
                 <div class="card-body">
                     <h3>Mouse Wireless</h3>
                     <p class="harga">Rp150.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
-                        Beli Sekarang
-                    </button>
+                    <button class="btn" onclick="tambahKeranjang()">Beli Sekarang</button>
                 </div>
             </div>
 
             <!-- Powerbank -->
             <div class="card">
-                <img src="images/power bank.JPG" alt="Power bank">
+                <img src="power bank.JPG" alt="Power bank">
                 <div class="card-body">
                     <h3>Powerbank 20.000mAh</h3>
                     <p class="harga">Rp300.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
-                        Beli Sekarang
-                    </button>
+                    <button class="btn" onclick="tambahKeranjang()">Beli Sekarang</button>
                 </div>
             </div>
 
         </div>
-
     </div>
-
     <!-- Login -->
-    <section class="form-section" id="login">
+<section class="form-section" id="login">
 
-        <h2>Login</h2>
+    <h2>Login</h2>
 
-        <form>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+    <form>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
 
-            <button type="submit">
-                Login
-            </button>
-        </form>
+        <button type="submit">
+            Login
+        </button>
+    </form>
 
-    </section>
+</section>
 
-    <!-- Register -->
-    <section class="form-section" id="register">
+<!-- Register -->
+<section class="form-section" id="register">
 
-        <h2>Register</h2>
+    <h2>Register</h2>
 
-        <form>
-            <input type="text" placeholder="Nama Lengkap">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
+    <form>
+        <input type="text" placeholder="Nama Lengkap">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
 
-            <button type="submit">
-                Daftar
-            </button>
-        </form>
+        <button type="submit">
+            Daftar
+        </button>
+    </form>
 
-    </section>
+</section>
 
-    <!-- Checkout -->
-    <section class="form-section" id="checkout">
+<!-- Checkout -->
+<section class="form-section" id="checkout">
 
-        <h2>Checkout</h2>
+    <h2>Checkout</h2>
 
-        <form>
-            <input type="text" placeholder="Nama Lengkap">
-            <input type="text" placeholder="Alamat">
-            <input type="text" placeholder="Nomor HP">
+    <form>
+        <input type="text" placeholder="Nama Lengkap">
+        <input type="text" placeholder="Alamat">
+        <input type="text" placeholder="Nomor HP">
 
-            <button type="submit">
-                Pesan Sekarang
-            </button>
-        </form>
+        <button type="submit">
+            Pesan Sekarang
+        </button>
+    </form>
 
-    </section>
+</section>
 
     <footer>
         <p>&copy; 2026 Tokopedia Store | Tugas Web Design & Development</p>
     </footer>
 
-    <script src="script.js"></script>
+<script>
+
+let jumlah = 0;
+
+function tambahKeranjang(){
+
+    jumlah++;
+
+    document.getElementById("cart").innerHTML = jumlah;
+}
+
+function cariProduk(){
+
+    let input =
+    document.getElementById("search").value.toLowerCase();
+
+    let produk =
+    document.querySelectorAll(".card");
+
+    produk.forEach(function(item){
+
+        let nama =
+        item.innerText.toLowerCase();
+
+        if(nama.includes(input)){
+
+            item.style.display = "block";
+
+        }else{
+
+            item.style.display = "none";
+        }
+
+    });
+}
+
+</script>
 
 </body>
 </html>
