@@ -56,7 +56,8 @@
                 <div class="card-body">
                     <h3>Headset Gaming RGB</h3>
                     <p class="harga">Rp250.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
+                    <button class="btn"
+                        onclick="tambahKeranjang('Headset Gaming RGB',250000)">
                         Beli Sekarang
                     </button>
                 </div>
@@ -68,7 +69,8 @@
                 <div class="card-body">
                     <h3>Keyboard Mechanical</h3>
                     <p class="harga">Rp450.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
+                    <button class="btn"
+                        onclick="tambahKeranjang('Keyboard Mechanical',450000)">
                         Beli Sekarang
                     </button>
                 </div>
@@ -80,7 +82,8 @@
                 <div class="card-body">
                     <h3>Mouse Wireless</h3>
                     <p class="harga">Rp150.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
+                    <button class="btn"
+                        onclick="tambahKeranjang('Mouse Wireless',150000)">
                         Beli Sekarang
                     </button>
                 </div>
@@ -92,7 +95,8 @@
                 <div class="card-body">
                     <h3>Powerbank 20.000mAh</h3>
                     <p class="harga">Rp300.000</p>
-                    <button class="btn" onclick="tambahKeranjang()">
+                    <button class="btn"
+                        onclick="tambahKeranjang('Powerbank 20.000mAh',300000)">
                         Beli Sekarang
                     </button>
                 </div>
@@ -103,54 +107,97 @@
     </div>
 
     <!-- Login -->
-    <section class="form-section" id="login">
+<section class="form-section" id="login">
 
-        <h2>Login</h2>
+    <h2>Login</h2>
 
-        <form>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+    <form onsubmit="loginUser(event)">
 
-            <button type="submit">
-                Login
-            </button>
-        </form>
+        <input
+            id="loginEmail"
+            type="email"
+            placeholder="Email"
+            required>
 
-    </section>
+        <input
+            id="loginPassword"
+            type="password"
+            placeholder="Password"
+            required>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+</section>
 
     <!-- Register -->
-    <section class="form-section" id="register">
+<section class="form-section" id="register">
 
-        <h2>Register</h2>
+    <h2>Register</h2>
 
-        <form>
-            <input type="text" placeholder="Nama Lengkap">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
+    <form onsubmit="registerUser(event)">
 
-            <button type="submit">
-                Daftar
-            </button>
-        </form>
+        <input
+            id="regNama"
+            type="text"
+            placeholder="Nama Lengkap"
+            required>
 
-    </section>
+        <input
+            id="regEmail"
+            type="email"
+            placeholder="Email"
+            required>
+
+        <input
+            id="regPassword"
+            type="password"
+            placeholder="Password"
+            required>
+
+        <button type="submit">
+            Daftar
+        </button>
+
+    </form>
+
+</section>
 
     <!-- Checkout -->
-    <section class="form-section" id="checkout">
+<section class="form-section" id="checkout">
 
-        <h2>Checkout</h2>
+    <h2>Checkout</h2>
 
-        <form>
-            <input type="text" placeholder="Nama Lengkap">
-            <input type="text" placeholder="Alamat">
-            <input type="text" placeholder="Nomor HP">
+    <form onsubmit="checkoutWA(event)">
 
-            <button type="submit">
-                Pesan Sekarang
-            </button>
-        </form>
+        <input
+            id="nama"
+            type="text"
+            placeholder="Nama Lengkap"
+            required>
 
-    </section>
+        <input
+            id="alamat"
+            type="text"
+            placeholder="Alamat"
+            required>
+
+        <input
+            id="hp"
+            type="text"
+            placeholder="Nomor HP"
+            required>
+
+        <button type="submit">
+            Pesan Sekarang
+        </button>
+
+    </form>
+
+</section>
 
     <footer>
         <p>&copy; 2026 Tokopedia Store | Tugas Web Design & Development</p>
