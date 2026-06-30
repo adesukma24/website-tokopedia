@@ -1,196 +1,1696 @@
-/* Pencarian dan Keranjang */
-.fitur{
-    width:90%;
-    margin:20px auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-}
+/* =======================================================
+   TOKOPEDIA STORE V2.0
+   STYLE.CSS
+   BAGIAN 1
+======================================================= */
 
-.fitur input{
-    width:300px;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
+/* =======================
+   RESET CSS
+======================= */
 
-.fitur h3{
-    color:#03ac0e;
-}
-
-/* Form Login, Register, Checkout */
-.form-section{
-    width:90%;
-    margin:30px auto;
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-.form-section h2{
-    margin-bottom:15px;
-    color:#03ac0e;
-}
-
-.form-section input{
-    width:100%;
-    padding:10px;
-    margin-bottom:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
-
-.form-section button{
-    background:#03ac0e;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-.form-section button:hover{
-    background:#028a0b;
-}
-
-/* Reset */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     background:#f5f5f5;
+    color:#333;
+    line-height:1.6;
+    overflow-x:hidden;
 }
 
-/* Header */
-header{
-    background:#03ac0e;
-    color:white;
-    padding:15px;
-    text-align:center;
+/* =======================
+   VARIABEL WARNA
+======================= */
+
+:root{
+
+    --green:#03ac0e;
+    --green-dark:#02960b;
+    --orange:#ff6f00;
+    --white:#ffffff;
+    --black:#222;
+    --gray:#666;
+    --light:#f5f5f5;
+    --border:#dddddd;
+    --shadow:0 5px 15px rgba(0,0,0,.10);
+
 }
+
+/* =======================
+   LINK
+======================= */
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* =======================
+   HEADER
+======================= */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    background:var(--white);
+
+    box-shadow:var(--shadow);
+
+    padding:15px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+/* =======================
+   LOGO
+======================= */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.logo i{
+
+    color:var(--green);
+
+    font-size:30px;
+
+}
+
+.logo h2{
+
+    color:var(--green);
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+/* =======================
+   NAVBAR
+======================= */
 
 nav{
-    background:white;
-    padding:15px;
-    text-align:center;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
 }
 
 nav a{
-    text-decoration:none;
-    color:#333;
-    margin:0 15px;
-    font-weight:bold;
+
+    color:#444;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    position:relative;
+
 }
 
 nav a:hover{
-    color:#03ac0e;
+
+    color:var(--green);
+
 }
 
-/* Banner */
-.banner{
-    background:#03ac0e;
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--green);
+
+    transition:.3s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* =======================
+   MENU KANAN
+======================= */
+
+.menu-kanan{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.menu-kanan button{
+
+    padding:10px 22px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--green);
+
     color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.menu-kanan button:hover{
+
+    background:var(--green-dark);
+
+    transform:translateY(-2px);
+
+}
+
+/* =======================
+   ICON KERANJANG
+======================= */
+
+.cart-icon{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.cart-icon i{
+
+    font-size:28px;
+
+    color:var(--green);
+
+}
+
+.cart-icon span{
+
+    position:absolute;
+
+    top:-10px;
+
+    right:-12px;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    background:red;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+/* =======================
+   HERO
+======================= */
+
+.hero{
+
+    width:100%;
+
+    min-height:500px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
     text-align:center;
-    padding:50px 20px;
+
+    color:white;
+
+    background: linear-gradient(135deg,#03ac0e,#02960b);
+    background-size:cover;
+
+    background-position:center;
+
+    padding:40px;
+
 }
 
-.banner h2{
-    margin-bottom:10px;
+.hero-text{
+
+    max-width:700px;
+
 }
 
-/* Produk */
-.container{
+.hero h1{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+}
+
+.hero button{
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:var(--green);
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.hero button:hover{
+
+    background:#eeeeee;
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* =======================
+   SECTION TITLE
+======================= */
+
+section h2{
+
+    text-align:center;
+
+    font-size:34px;
+
+    margin-bottom:35px;
+
+    color:var(--green);
+
+    font-weight:700;
+
+}
+/* =======================================================
+   TOKOPEDIA STORE V2.0
+   STYLE.CSS
+   BAGIAN 2
+======================================================= */
+
+/* =======================
+   SEARCH BOX
+======================= */
+
+.search-box{
+
     width:90%;
-    margin:auto;
-    padding:30px 0;
+
+    margin:40px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
 }
+
+.search-box input{
+
+    width:100%;
+
+    max-width:700px;
+
+    padding:16px 20px;
+
+    border:2px solid var(--green);
+
+    border-radius:50px;
+
+    outline:none;
+
+    font-size:17px;
+
+    transition:.3s;
+
+    background:white;
+
+}
+
+.search-box input:focus{
+
+    box-shadow:0 0 10px rgba(3,172,14,.30);
+
+}
+
+/* =======================
+   KATEGORI
+======================= */
+
+.kategori{
+
+    width:90%;
+
+    margin:auto;
+
+    padding:20px 0 50px;
+
+}
+
+.kategori-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.kategori-item{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
+}
+
+.kategori-item:hover{
+
+    transform:translateY(-8px);
+
+    background:var(--green);
+
+    color:white;
+
+}
+
+.kategori-item i{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+    color:var(--green);
+
+    transition:.35s;
+
+}
+
+.kategori-item:hover i{
+
+    color:white;
+
+}
+
+.kategori-item p{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+/* =======================
+   PRODUK
+======================= */
 
 .produk{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+
+    width:90%;
+
+    margin:auto;
+
+    padding:20px 0 70px;
+
 }
 
+.produk-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+/* =======================
+   CARD PRODUK
+======================= */
+
 .card{
+
     background:white;
-    border-radius:10px;
+
+    border-radius:18px;
+
     overflow:hidden;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    position:relative;
+
 }
 
 .card:hover{
-    transform:translateY(-5px);
+
+    transform:translateY(-10px);
+
 }
 
 .card img{
+
     width:100%;
-    height:200px;
+
+    height:230px;
+
     object-fit:cover;
+
 }
 
-.card-body{
-    padding:15px;
-}
+.card h3{
 
-.card-body h3{
-    font-size:18px;
-    margin-bottom:10px;
-}
+    padding:20px 20px 10px;
 
-.harga{
-    color:#03ac0e;
     font-size:20px;
+
+    color:#333;
+
+}
+
+.card .harga{
+
+    padding:10px 20px;
+
+    color:var(--green);
+
+    font-size:25px;
+
     font-weight:bold;
-    margin-bottom:10px;
+
 }
 
-.btn{
-    display:block;
-    width:100%;
-    padding:10px;
-    background:#03ac0e;
-    color:white;
+/* =======================
+   RATING
+======================= */
+
+.rating{
+
+    padding:0 20px;
+
+    color:#ffc107;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+}
+
+/* =======================
+   TOMBOL PRODUK
+======================= */
+
+.card button{
+
+    width:calc(100% - 40px);
+
+    margin:20px;
+
+    padding:14px;
+
     border:none;
-    border-radius:5px;
-    cursor:pointer;
-    transition:0.3s;
-}
 
-.btn:hover{
-    background:#028a0b;
-}
+    border-radius:10px;
 
-/* Footer */
-footer{
-    background:#333;
+    background:var(--green);
+
     color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:30px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
-/* Responsive */
+.card button:hover{
+
+    background:var(--green-dark);
+
+    transform:scale(1.03);
+
+}
+
+.card button i{
+
+    margin-right:8px;
+
+}
+
+/* =======================
+   LABEL DISKON
+======================= */
+
+.card::before{
+
+    content:"HOT";
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:#ff3d00;
+
+    color:white;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+}
+
+/* =======================
+   EFEK GAMBAR
+======================= */
+
+.card img{
+
+    transition:.4s;
+
+}
+
+.card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* =======================
+   RESPONSIVE PRODUK
+======================= */
+
 @media(max-width:768px){
 
-    .fitur{
+    .produk-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .kategori-list{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .hero h1{
+
+        font-size:36px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+}
+
+/* =======================================================
+   TOKOPEDIA STORE V2.0
+   STYLE.CSS
+   BAGIAN 3
+=======================================================*/
+
+/* ===========================
+   KERANJANG BELANJA
+=========================== */
+
+.cart-section{
+
+    width:90%;
+    margin:50px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+
+}
+
+.cart-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+
+}
+
+.cart-header h2{
+
+    color:var(--green);
+
+}
+
+.cart-list{
+
+    min-height:120px;
+
+}
+
+.cart-item{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    transition:.3s;
+
+}
+
+.cart-item:hover{
+
+    background:#f8f8f8;
+
+}
+
+.cart-info{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.cart-info h4{
+
+    font-size:18px;
+    margin-bottom:5px;
+
+}
+
+.cart-info p{
+
+    color:var(--green);
+    font-weight:bold;
+
+}
+
+.cart-item button{
+
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.cart-item button:hover{
+
+    background:#d63031;
+
+}
+
+.empty-cart{
+
+    text-align:center;
+    color:#999;
+    padding:30px;
+
+}
+
+/* ===========================
+   TOTAL HARGA
+=========================== */
+
+.cart-total{
+
+    margin-top:20px;
+    text-align:right;
+    font-size:22px;
+    font-weight:bold;
+    color:var(--green);
+
+}
+
+/* ===========================
+   TOMBOL KERANJANG
+=========================== */
+
+.cart-button{
+
+    margin-top:25px;
+    display:flex;
+    justify-content:flex-end;
+
+}
+
+.cart-button button{
+
+    background:#ff4d4d;
+    color:white;
+    padding:14px 28px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+.cart-button button:hover{
+
+    background:#c0392b;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-section{
+
+    width:90%;
+    margin:60px auto;
+
+}
+
+.form-card{
+
+    max-width:500px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+
+}
+
+.form-card h2{
+
+    text-align:center;
+    color:var(--green);
+    margin-bottom:30px;
+
+}
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+
+}
+
+.input-group input,
+.input-group textarea{
+
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    outline:none;
+    transition:.3s;
+    font-size:15px;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border-color:var(--green);
+    box-shadow:0 0 8px rgba(3,172,14,.2);
+
+}
+
+/* ===========================
+   BUTTON LOGIN
+=========================== */
+
+.btn-login{
+
+    width:100%;
+    background:var(--green);
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:17px;
+    transition:.3s;
+
+}
+
+.btn-login:hover{
+
+    background:var(--green-dark);
+
+}
+
+/* ===========================
+   BUTTON REGISTER
+=========================== */
+
+.btn-register{
+
+    width:100%;
+    background:#ff9800;
+    color:white;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:17px;
+    transition:.3s;
+
+}
+
+.btn-register:hover{
+
+    background:#e68900;
+
+}
+
+/* ===========================
+   CHECKOUT
+=========================== */
+
+.checkout-section{
+
+    width:90%;
+    margin:60px auto;
+
+}
+
+.checkout-card{
+
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+
+}
+
+.checkout-card h2{
+
+    text-align:center;
+    color:var(--green);
+    margin-bottom:25px;
+
+}
+
+.checkout-ringkasan{
+
+    margin-top:25px;
+    background:#f5f5f5;
+    padding:20px;
+    border-radius:10px;
+
+}
+
+.checkout-ringkasan h3{
+
+    margin-bottom:10px;
+    color:var(--green);
+
+}
+
+#checkoutProduk{
+
+    margin-bottom:20px;
+    line-height:1.8;
+
+}
+
+#checkoutTotal{
+
+    color:var(--green);
+    font-size:24px;
+    font-weight:bold;
+
+}
+
+/* ===========================
+   BUTTON CHECKOUT
+=========================== */
+
+.btn-checkout{
+
+    width:100%;
+    margin-top:25px;
+    background:#25D366;
+    color:white;
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+
+}
+
+.btn-checkout:hover{
+
+    background:#1ebe5d;
+
+}
+
+.btn-checkout i{
+
+    margin-right:10px;
+
+}
+
+/* ===========================
+   LINK LOGIN REGISTER
+=========================== */
+
+.form-card p{
+
+    margin-top:20px;
+    text-align:center;
+
+}
+
+.form-card a{
+
+    color:var(--green);
+    font-weight:bold;
+
+}
+
+.form-card a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .cart-item{
+
         flex-direction:column;
+        align-items:flex-start;
         gap:15px;
+
     }
 
-    .fitur input{
+    .cart-button{
+
+        justify-content:center;
+
+    }
+
+    .checkout-card,
+    .form-card{
+
+        padding:25px;
+
+    }
+
+}
+
+/* =======================================================
+   TOKOPEDIA STORE V2.0
+   STYLE.CSS
+   BAGIAN 4 (TERAKHIR)
+=======================================================*/
+
+/* ===========================
+   TOAST NOTIFICATION
+=========================== */
+
+.toast{
+
+    position:fixed;
+    top:25px;
+    right:25px;
+
+    background:#03ac0e;
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:10px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+    font-weight:bold;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateX(100px);
+
+    transition:.4s;
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:translateX(0);
+
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9998;
+
+}
+
+.modal-content{
+
+    width:90%;
+    max-width:500px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    position:relative;
+
+    animation:popup .35s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+        opacity:1;
+
+    }
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:15px;
+    right:20px;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    color:#999;
+
+}
+
+.close:hover{
+
+    color:red;
+
+}
+
+.profile-header{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.profile-header i{
+
+    font-size:70px;
+
+    color:#03ac0e;
+
+    margin-bottom:15px;
+
+}
+
+.profile-body{
+
+    line-height:2;
+
+}
+
+.profile-footer{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+
+.profile-footer button{
+
+    background:#ff4d4d;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.profile-footer button:hover{
+
+    background:#d63031;
+
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+.loading{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:white;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    z-index:99999;
+
+}
+
+.loader{
+
+    width:60px;
+    height:60px;
+
+    border:6px solid #eee;
+
+    border-top:6px solid #03ac0e;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin-bottom:20px;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===========================
+   BACK TO TOP
+=========================== */
+
+#btnTop{
+
+    position:fixed;
+
+    bottom:30px;
+    right:30px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#03ac0e;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    box-shadow:0 8px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#btnTop:hover{
+
+    background:#02960b;
+
+    transform:translateY(-5px);
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    background:#222;
+
+    color:white;
+
+    margin-top:70px;
+
+}
+
+.footer-container{
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:40px;
+
+    padding:60px 0;
+
+}
+
+.footer-box h3{
+
+    color:#03ac0e;
+
+    margin-bottom:20px;
+
+}
+
+.footer-box p{
+
+    line-height:1.8;
+
+    color:#ddd;
+
+}
+
+.footer-box ul li{
+
+    margin:12px 0;
+
+}
+
+.footer-box ul li a{
+
+    color:#ddd;
+
+    transition:.3s;
+
+}
+
+.footer-box ul li a:hover{
+
+    color:#03ac0e;
+
+}
+
+.social{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:15px;
+
+}
+
+.social a{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#03ac0e;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.social a:hover{
+
+    transform:translateY(-6px);
+
+    background:#02960b;
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    background:#111;
+
+    padding:18px;
+
+    font-size:15px;
+
+    color:#bbb;
+
+}
+
+/* ===========================
+   ANIMASI SECTION
+=========================== */
+
+section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE TABLET
+=========================== */
+
+@media(max-width:992px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero h1{
+
+        font-size:40px;
+
+    }
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE HP
+=========================== */
+
+@media(max-width:768px){
+
+    .menu-kanan{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .hero{
+
+        min-height:380px;
+
+        padding:20px;
+
+    }
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .footer-container{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .social{
+
+        justify-content:center;
+
+    }
+
+    #btnTop{
+
+        bottom:20px;
+        right:20px;
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE MOBILE KECIL
+=========================== */
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:26px;
+
+    }
+
+    .hero button{
+
         width:100%;
+
     }
 
-    nav a{
-        display:block;
-        margin:10px 0;
+    .menu-kanan button{
+
+        width:100%;
+
     }
+
+    .search-box input{
+
+        font-size:15px;
+
+    }
+
 }
