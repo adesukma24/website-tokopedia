@@ -1,11 +1,3 @@
-/* ==========================================================
-   TOKOPEDIA STORE V2.0
-   SCRIPT.JS
-
-/* ===========================
-   INISIALISASI
-=========================== */
-
 let keranjang =
 JSON.parse(localStorage.getItem("keranjang")) || [];
 
